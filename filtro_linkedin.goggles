@@ -1,0 +1,9 @@
+! name: Filtro LinkedIn sin Empleos
+! description: Prioriza LinkedIn pero elimina ofertas de trabajo.
+! public: true
+! author: simpleeditors
+
+$boost=5,site=linkedin.com
+$discard,site=linkedin.com/jobs
+$discard,site=linkedin.com/mwlite/jobs
+$discard,anchor=jobs
