@@ -4,6 +4,5 @@
 ! author: simpleeditors
 
 $boost=5,site=linkedin.com
-$discard,site=linkedin.com/jobs
-$discard,site=linkedin.com/mwlite/jobs
-$discard,anchor=jobs
+$discard,path=/jobs/
+$discard,path=/mwlite/jobs/
