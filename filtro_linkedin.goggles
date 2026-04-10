@@ -1,21 +1,25 @@
 ! name: LinkedIn Solo Posts
-! description: Solo posts de LinkedIn, sin empleos
+! description: Solo actividad y artículos de LinkedIn
 ! public: true
 ! author: simpleeditors
 
-! === DESCARTAR TODO POR DEFECTO ===
-* $discard
+! === DESCARTAR TODO ===
+*$discard
 
-! === PERMITIR SOLO LINKEDIN ===
-$undiscard,site=linkedin.com
+! === PERMITIR SOLO CONTENIDO TIPO POST ===
+$undiscard,site=linkedin.com,inurl=/posts/
+$undiscard,site=linkedin.com,inurl=/pulse/
+$undiscard,site=linkedin.com,inurl=/recent-activity/
 
-! === BOOST A POSTS DE LINKEDIN ===
-$boost=10,site=linkedin.com
+! === BOOST ===
+$boost=10,site=linkedin.com,inurl=/recent-activity/
 $boost=10,site=linkedin.com,inurl=/posts/
 $boost=10,site=linkedin.com,inurl=/pulse/
 
-! === DESCARTAR EMPLEOS DENTRO DE LINKEDIN ===
-/jobs/$discard
-/job/$discard
+! === BLOQUEAR PERFILES SIN ACTIVIDAD ===
 $discard,site=linkedin.com,inurl=/jobs/
 $discard,site=linkedin.com,inurl=/job/
+$discard,site=linkedin.com,inurl=/company/
+$discard,site=linkedin.com,inurl=/learning/
+$discard,site=linkedin.com,inurl=/events/
+$discard,site=linkedin.com,inurl=/groups/
