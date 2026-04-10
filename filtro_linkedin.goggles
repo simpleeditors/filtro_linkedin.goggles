@@ -1,8 +1,30 @@
-! name: LinkedIn Sin Empleos
-! description: Prioriza LinkedIn pero quita la sección de empleos
+! name: LinkedIn Solo Posts
+! description: Muestra solo posts de LinkedIn, elimina empleos, cursos y sugerencias de trabajo
 ! public: true
 ! author: simpleeditors
 
-$boost=5,site=linkedin.com
+! === BOOST LINKEDIN GENERAL ===
+$boost=10,site=linkedin.com
+
+! === BOOST ESPECÍFICO A POSTS ===
+$boost=10,site=linkedin.com,inurl=/posts/
+$boost=10,site=linkedin.com,inurl=/pulse/
+$boost=10,site=linkedin.com,inurl=/feed/
+
+! === ELIMINAR EMPLEOS (todas las variantes) ===
 /jobs/$discard
+/job/$discard
 /mwlite/jobs/$discard
+/jobPosting/$discard
+/job-apply/$discard
+$discard,site=linkedin.com,inurl=/jobs/
+$discard,site=linkedin.com,inurl=/job/
+$discard,site=linkedin.com,intitle=empleos
+$discard,site=linkedin.com,intitle=jobs
+$discard,site=linkedin.com,intitle=hiring
+$discard,site=linkedin.com,intitle=we're hiring
+
+! === ELIMINAR SECCIONES NO DESEADAS ===
+$discard,site=linkedin.com,inurl=/learning/
+$discard,site=linkedin.com,inurl=/events/
+$discard,site=linkedin.com,inurl=/company/.*jobs
