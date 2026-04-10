@@ -1,24 +1,20 @@
 ! name: LinkedIn Solo Posts
-! description: Solo actividad y artículos de LinkedIn
+! description: Solo artículos Pulse de LinkedIn
 ! public: true
 ! author: simpleeditors
 
 ! === DESCARTAR TODO ===
 *$discard
 
-! === PERMITIR SOLO CONTENIDO TIPO POST ===
-$undiscard,site=linkedin.com,inurl=/posts/
+! === PERMITIR SOLO ARTÍCULOS PULSE ===
 $undiscard,site=linkedin.com,inurl=/pulse/
-$undiscard,site=linkedin.com,inurl=/recent-activity/
 
 ! === BOOST ===
-$boost=10,site=linkedin.com,inurl=/recent-activity/
-$boost=10,site=linkedin.com,inurl=/posts/
 $boost=10,site=linkedin.com,inurl=/pulse/
 
-! === BLOQUEAR PERFILES SIN ACTIVIDAD ===
+! === BLOQUEAR PERFILES Y RESTO ===
+$discard,site=linkedin.com,inurl=/in/
 $discard,site=linkedin.com,inurl=/jobs/
-$discard,site=linkedin.com,inurl=/job/
 $discard,site=linkedin.com,inurl=/company/
 $discard,site=linkedin.com,inurl=/learning/
 $discard,site=linkedin.com,inurl=/events/
