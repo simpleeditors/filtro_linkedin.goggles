@@ -4,4 +4,4 @@
 ! author: simpleeditors
 
 $boost=5,site=linkedin.com
-$discard,path=/jobs/
+/jobs/$discard
