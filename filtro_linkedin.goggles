@@ -3,19 +3,19 @@
 ! public: true
 ! author: simpleeditors
 
-! === BOOST LINKEDIN ===
+! === DESCARTAR TODO POR DEFECTO ===
+* $discard
+
+! === PERMITIR SOLO LINKEDIN ===
+$undiscard,site=linkedin.com
+
+! === BOOST A POSTS DE LINKEDIN ===
 $boost=10,site=linkedin.com
 $boost=10,site=linkedin.com,inurl=/posts/
 $boost=10,site=linkedin.com,inurl=/pulse/
 
-! === DESCARTAR TODO LO QUE NO SEA LINKEDIN ===
-$discard,site=reddit.com
-$discard,site=youtube.com
-$discard,site=adobe.com
-$discard,site=indeed.com
-$discard,site=glassdoor.com
-
-! === DESCARTAR EMPLEOS DE LINKEDIN ===
+! === DESCARTAR EMPLEOS DENTRO DE LINKEDIN ===
 /jobs/$discard
 /job/$discard
 $discard,site=linkedin.com,inurl=/jobs/
+$discard,site=linkedin.com,inurl=/job/
